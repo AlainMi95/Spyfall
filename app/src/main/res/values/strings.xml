@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Spyfall</string>
+    <string name="messageWithLink"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">GitHub</a></string>
 </resources>
