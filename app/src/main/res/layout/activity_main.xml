@@ -7,80 +7,101 @@
     tools:context=".MainActivity"
     android:background="@drawable/background">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="1">
-        <TextView
-            android:id="@+id/spyfallText"
-            android:layout_width="360dp"
-            android:layout_height="118dp"
-            android:gravity="center"
-            android:text="Spyfall"
-            android:shadowColor="@color/black"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:textColor="@color/white"
-            android:textSize="75sp"
-            android:layout_rowWeight="1"
-            android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/spyfallText"
+        android:layout_width="360dp"
+        android:layout_height="118dp"
+        android:layout_rowWeight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="Spyfall"
+        android:textColor="@color/white"
+        android:textSize="75sp"
+        app:layout_constraintBottom_toTopOf="@+id/hostButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/hostButton"
-            android:layout_width="229dp"
-            android:layout_height="62dp"
-            android:text="Host new Game"
-            app:backgroundTint="#F44336"
-            android:layout_rowWeight="2"
-            android:layout_gravity="center"/>
-        <Button
-            android:id="@+id/joinButton"
-            android:layout_width="149dp"
-            android:layout_height="55dp"
-            android:text="Join Game"
-            app:backgroundTint="#F44336"
-            android:layout_rowWeight="3"
-            android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/hostButton"
+        android:layout_width="229dp"
+        android:layout_height="62dp"
+        android:layout_rowWeight="2"
+        android:layout_gravity="center"
+        android:text="@string/host_game"
+        app:backgroundTint="#F44336"
+        app:layout_constraintBottom_toTopOf="@+id/joinButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spyfallText" />
 
-        <TextView
-            android:id="@+id/howtoText"
-            android:layout_width="155dp"
-            android:layout_height="56dp"
-            android:gravity="center"
-            android:text="How to play"
-            android:textColor="@color/white"
-            android:shadowColor="@color/black"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:textSize="20sp"
-            android:layout_rowWeight="4"
-            android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/joinButton"
+        android:layout_width="149dp"
+        android:layout_height="55dp"
+        android:layout_rowWeight="3"
+        android:layout_gravity="center"
+        android:text="Join Game"
+        app:backgroundTint="#F44336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/howtoText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hostButton" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Spyfall by Alain Michienzi and Robin Portner"
-            android:textColor="@color/white"
-            android:shadowColor="@color/black"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:layout_rowWeight="5"
-            android:layout_gravity="bottom|center"/>
+    <TextView
+        android:id="@+id/howtoText"
+        android:layout_width="155dp"
+        android:layout_height="56dp"
+        android:layout_rowWeight="4"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="How to play"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/joinButton" />
 
-        <TextView
-            android:id="@+id/textViewLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="@string/messageWithLink"
-            android:textColor="@color/white"
-            android:layout_rowWeight="6"
-            android:layout_gravity="bottom|center"/>
-    </GridLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="Spyfall by Alain Michienzi and Robin Portner"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLink"
+        app:layout_constraintTop_toBottomOf="@+id/howtoText" />
+
+    <TextView
+        android:id="@+id/textViewLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_rowWeight="6"
+        android:layout_centerInParent="true"
+        android:layout_gravity="bottom|center"
+        android:gravity="center"
+        android:text="@string/messageWithLink"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
