@@ -1,12 +1,14 @@
 package com.example.spyfall
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import java.net.ServerSocket
 import java.util.*
+import kotlin.concurrent.thread
 
 class HostGameActivity : AppCompatActivity() {
 
@@ -14,17 +16,15 @@ class HostGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_host_game)
 
-        val createGameButton: Button = findViewById(R.id.host_game_create_button)
-        createGameButton.setOnClickListener {
-            val server =  ServerSocket(1000)
-            val client = server.accept()
-            println("Client connected : ${client.inetAddress.hostAddress}")
-            val scanner = Scanner(client.inputStream)
-            while (scanner.hasNextLine()) {
-                println(scanner.nextLine())
-                break
+        thread {
+            val server = ServerSocket(9999)
+            Log.d("server","Server is running on port ${server.localPort}")
+
+            while (true) {
+                Log.d("server","in while")
+                val client = server.accept()
+                Log.d("server","Client connected: ${client.inetAddress.hostAddress}")
             }
-            server.close()
         }
 
     }
